@@ -51,7 +51,7 @@ The model architecture includes:
 The sigmoid activation function is used for binary classification between:
 
 * Car
-* College Bus
+* Bus
 
 ---
 
