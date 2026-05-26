@@ -223,3 +223,6 @@ YOLOv8 tracking detects and tracks moving vehicles while preventing duplicate co
 
 ### Step 3: Final Vehicle Monitoring Result
 
+The system displays the final vehicle count summary along with real-time monitoring results.
+
+![Step 3](images/cctv_step3.png)
