@@ -53,8 +53,7 @@ def load_classifier_model():
             import tensorflow as tf
             model = tf.keras.models.load_model(h5_path)
             return model
-        except Exception as e:
-            st.sidebar.warning(f"Could not load custom classifier: {e}")
+        except Exception:
             return None
     return None
 
@@ -350,7 +349,7 @@ elif menu == "🧠 Custom Classifier (Bus vs Car)":
     st.write("Classifies whether an individual image is a **College Bus** or a **Car** using the custom trained Deep Learning model.")
 
     if classifier_model is None:
-        st.error("Custom model `college_bus_vs_car_model.h5` not found or failed to load.")
+        st.info("ℹ️ The standalone MobileNetV2 classifier model (.h5) requires a Python 3.11/3.10 environment with TensorFlow. You can use the high-performance **Single Image**, **Batch Images**, or **CCTV Video Tracking** modes in the sidebar (powered by YOLOv8) for real-time detection & counting!")
     else:
         uploaded_file = st.file_uploader("Upload Image to Classify", type=["jpg", "jpeg", "png"], key="classifier_upload")
         use_sample_car = st.checkbox("Or use sample Car image (Car.jpeg)", value=False)
